@@ -2,7 +2,7 @@ package tn.codynet.moduleventes.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import tn.codynet.moduleventes.services.entities.Taxe;
+import tn.codynet.moduleventes.entities.Taxe;
 import tn.codynet.moduleventes.services.impl.TaxeServiceImpl;
 
 import java.util.List;

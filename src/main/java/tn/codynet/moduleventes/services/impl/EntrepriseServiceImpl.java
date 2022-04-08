@@ -5,9 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.codynet.moduleventes.dao.EntrepriseRepo;
 import tn.codynet.moduleventes.services.IEntrepriseService;
-import tn.codynet.moduleventes.services.entities.Entreprise;
+import tn.codynet.moduleventes.entities.Entreprise;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service

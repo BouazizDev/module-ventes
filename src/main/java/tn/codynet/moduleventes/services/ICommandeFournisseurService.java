@@ -1,7 +1,7 @@
 package tn.codynet.moduleventes.services;
 
 
-import tn.codynet.moduleventes.services.entities.CommandeFournisseur;
+import tn.codynet.moduleventes.entities.CommandeFournisseur;
 
 import java.util.List;
 import java.util.Optional;

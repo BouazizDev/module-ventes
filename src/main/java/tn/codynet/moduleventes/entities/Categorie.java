@@ -1,23 +1,24 @@
-package tn.codynet.moduleventes.services.entities;
+package tn.codynet.moduleventes.entities;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-
-@Entity
+import java.util.List;
+@Builder
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class Entreprise extends AbstractEntity{
+@Entity
+public class Categorie extends AbstractEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String nom;
-    private String photo;
-    @Embedded
-    private Adresse adresse;
-    private String numero;
-    private String email;
+
+    @OneToMany
+    @JoinColumn(name = "commandeClient")
+    private List<Article> articles;
 }

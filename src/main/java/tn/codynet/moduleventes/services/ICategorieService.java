@@ -1,7 +1,6 @@
 package tn.codynet.moduleventes.services;
 
-import tn.codynet.moduleventes.services.entities.Article;
-import tn.codynet.moduleventes.services.entities.Categorie;
+import tn.codynet.moduleventes.entities.Categorie;
 
 import java.util.List;
 import java.util.Optional;

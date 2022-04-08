@@ -1,9 +1,7 @@
 package tn.codynet.moduleventes.services;
 
-import tn.codynet.moduleventes.services.entities.Client;
-import tn.codynet.moduleventes.services.entities.Entreprise;
+import tn.codynet.moduleventes.entities.Entreprise;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface IEntrepriseService {

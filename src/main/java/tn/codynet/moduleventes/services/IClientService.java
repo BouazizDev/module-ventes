@@ -1,7 +1,7 @@
 package tn.codynet.moduleventes.services;
 
 
-import tn.codynet.moduleventes.services.entities.Client;
+import tn.codynet.moduleventes.entities.Client;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package tn.codynet.moduleventes.services.entities;
+package tn.codynet.moduleventes.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

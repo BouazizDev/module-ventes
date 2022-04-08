@@ -1,4 +1,4 @@
-package tn.codynet.moduleventes.services.entities;
+package tn.codynet.moduleventes.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

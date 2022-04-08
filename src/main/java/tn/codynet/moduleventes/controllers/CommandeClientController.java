@@ -1,10 +1,9 @@
 package tn.codynet.moduleventes.controllers;
 
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import tn.codynet.moduleventes.services.entities.CommandeClient;
-import tn.codynet.moduleventes.services.entities.EtatCommande;
+import tn.codynet.moduleventes.entities.CommandeClient;
+import tn.codynet.moduleventes.entities.EtatCommande;
 import tn.codynet.moduleventes.services.impl.CommandeClientServiceImpl;
 
 import java.util.List;

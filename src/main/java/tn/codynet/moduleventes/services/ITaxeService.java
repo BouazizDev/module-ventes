@@ -1,6 +1,6 @@
 package tn.codynet.moduleventes.services;
 
-import tn.codynet.moduleventes.services.entities.Taxe;
+import tn.codynet.moduleventes.entities.Taxe;
 
 import java.util.List;
 import java.util.Optional;

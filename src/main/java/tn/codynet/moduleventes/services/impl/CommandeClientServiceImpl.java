@@ -7,11 +7,10 @@ import tn.codynet.moduleventes.dao.ArticleRepo;
 import tn.codynet.moduleventes.dao.ClientRepo;
 import tn.codynet.moduleventes.dao.CommandeClientRepo;
 import tn.codynet.moduleventes.dao.LigneCommandeClientRepo;
-import tn.codynet.moduleventes.services.entities.CommandeClient;
+import tn.codynet.moduleventes.entities.CommandeClient;
 import tn.codynet.moduleventes.services.ICommandeClientService;
-import tn.codynet.moduleventes.services.entities.EtatCommande;
+import tn.codynet.moduleventes.entities.EtatCommande;
 
-import java.awt.dnd.InvalidDnDOperationException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;

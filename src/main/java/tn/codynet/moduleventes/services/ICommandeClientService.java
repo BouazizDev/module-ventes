@@ -1,7 +1,7 @@
 package tn.codynet.moduleventes.services;
 
-import tn.codynet.moduleventes.services.entities.CommandeClient;
-import tn.codynet.moduleventes.services.entities.EtatCommande;
+import tn.codynet.moduleventes.entities.CommandeClient;
+import tn.codynet.moduleventes.entities.EtatCommande;
 
 import java.util.List;
 import java.util.Optional;

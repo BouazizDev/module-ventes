@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.codynet.moduleventes.dao.ClientRepo;
-import tn.codynet.moduleventes.services.entities.Client;
+import tn.codynet.moduleventes.entities.Client;
 import tn.codynet.moduleventes.services.IClientService;
 
 import java.util.List;

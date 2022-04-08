@@ -2,9 +2,7 @@ package tn.codynet.moduleventes.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import tn.codynet.moduleventes.services.entities.Article;
-import tn.codynet.moduleventes.services.entities.Client;
-import tn.codynet.moduleventes.services.impl.ArticleServiceImpl;
+import tn.codynet.moduleventes.entities.Client;
 import tn.codynet.moduleventes.services.impl.ClientServiceImpl;
 
 import java.util.List;

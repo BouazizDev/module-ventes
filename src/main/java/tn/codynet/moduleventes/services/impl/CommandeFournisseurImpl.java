@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.codynet.moduleventes.dao.*;
 import tn.codynet.moduleventes.services.ICommandeFournisseurService;
-import tn.codynet.moduleventes.services.entities.CommandeFournisseur;
+import tn.codynet.moduleventes.entities.CommandeFournisseur;
 
 import java.util.List;
 import java.util.Objects;
