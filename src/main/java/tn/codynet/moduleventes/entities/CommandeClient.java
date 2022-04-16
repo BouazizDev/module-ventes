@@ -33,6 +33,9 @@ public class CommandeClient extends AbstractEntity {
     @JsonIgnore
     private List<LigneCommandeClient> ligneCommandeClients;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "facture",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<LigneFactureClient> ligneFactureClient;
     // check if commande livree
     public boolean isCommandeLivree(){
         return EtatCommande.LIVREE.equals(this.etatCommande);

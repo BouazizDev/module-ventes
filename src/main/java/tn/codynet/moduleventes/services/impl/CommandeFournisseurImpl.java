@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.codynet.moduleventes.dao.*;
+import tn.codynet.moduleventes.entities.CommandeClient;
+import tn.codynet.moduleventes.entities.EtatCommande;
 import tn.codynet.moduleventes.services.ICommandeFournisseurService;
 import tn.codynet.moduleventes.entities.CommandeFournisseur;
 
@@ -62,7 +64,17 @@ public class CommandeFournisseurImpl implements ICommandeFournisseurService {
         }
         return commandeFournisseurRepo.findById(id);
     }
-
+    @Override
+    public CommandeFournisseur updateEtat(long id, EtatCommande etatCommande) {
+        CommandeFournisseur commandeFournisseur = findCommandeFournisseurById(id).get();
+        if(commandeFournisseur!=null&& commandeFournisseur.isCommandeLivree()==false){
+            commandeFournisseur.setEtatCommande(etatCommande);
+            commandeFournisseurRepo.save(commandeFournisseur);
+        }else {
+            log.warn("On ne peut pas modifier l'etat de la commande");
+        }
+        return commandeFournisseur;
+    }
     @Override
     public Optional<CommandeFournisseur> findByReference(String ref) {
         if (ref.equals(null)) {

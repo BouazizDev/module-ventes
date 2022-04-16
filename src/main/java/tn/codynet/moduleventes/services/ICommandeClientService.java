@@ -13,4 +13,5 @@ public interface ICommandeClientService {
     Optional<CommandeClient> findByReference(String ref);
     void deleteCommandeClient(long id);
     CommandeClient updateEtat(long id, EtatCommande etatCommande);
+
 }

@@ -57,5 +57,5 @@ public class CommandeClientController {
         return ResponseEntity.ok(commandeClientService.updateEtat(id, etatCommande));
     }
 
-    ;
+
 }

@@ -8,6 +8,7 @@ import tn.codynet.moduleventes.dao.ClientRepo;
 import tn.codynet.moduleventes.dao.CommandeClientRepo;
 import tn.codynet.moduleventes.dao.LigneCommandeClientRepo;
 import tn.codynet.moduleventes.entities.CommandeClient;
+import tn.codynet.moduleventes.entities.LigneCommandeClient;
 import tn.codynet.moduleventes.services.ICommandeClientService;
 import tn.codynet.moduleventes.entities.EtatCommande;
 
@@ -86,5 +87,6 @@ public class CommandeClientServiceImpl  implements ICommandeClientService {
         }
         return commandeClient;
     }
+
 
 }

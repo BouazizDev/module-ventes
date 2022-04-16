@@ -20,6 +20,7 @@ public class CommandeFournisseur extends AbstractEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String reference;
+    private EtatCommande etatCommande;
     @CreationTimestamp
     @Column(name = "created_at", updatable = false, nullable = false)
     protected Instant createdAt;
@@ -29,4 +30,8 @@ public class CommandeFournisseur extends AbstractEntity {
     @OneToMany
     @JoinColumn(name = "commandeFournisseur")
     private List<LigneCommandeFournisseur> ligneCommandeFournisseurs;
+    //check if commande is delivered
+    public boolean isCommandeLivree(){
+        return EtatCommande.LIVREE.equals(this.etatCommande);
+    }
 }

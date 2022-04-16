@@ -26,7 +26,6 @@ public class Article extends AbstractEntity {
     private String Description;
     private int quantite;
     private String image;
-    private double prix;
     private double prixUnitaireHT;
     private double prixDeVente;
     private double prixUnitaireTTC;
