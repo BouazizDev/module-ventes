@@ -7,11 +7,10 @@ import tn.codynet.moduleventes.dao.ArticleRepo;
 import tn.codynet.moduleventes.dao.ClientRepo;
 import tn.codynet.moduleventes.dao.CommandeClientRepo;
 import tn.codynet.moduleventes.dao.LigneCommandeClientRepo;
-import tn.codynet.moduleventes.entities.CommandeClient;
-import tn.codynet.moduleventes.entities.LigneCommandeClient;
+import tn.codynet.moduleventes.entities.*;
 import tn.codynet.moduleventes.services.ICommandeClientService;
-import tn.codynet.moduleventes.entities.EtatCommande;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -23,12 +22,14 @@ public class CommandeClientServiceImpl  implements ICommandeClientService {
     private ClientRepo clientRepo;
     private CommandeClientRepo commandeClientRepo;
     private LigneCommandeClientRepo ligneCommandeClientRepo;
+    private MvtStockServiceImpl mvtStockService;
     @Autowired
-    public CommandeClientServiceImpl(ArticleRepo articleRepo, ClientRepo clientRepo, CommandeClientRepo commandeClientRepo,LigneCommandeClientRepo ligneCommandeClientRepo) {
+    public CommandeClientServiceImpl(ArticleRepo articleRepo, ClientRepo clientRepo, CommandeClientRepo commandeClientRepo, LigneCommandeClientRepo ligneCommandeClientRepo, MvtStockServiceImpl mvtStockService) {
         this.articleRepo = articleRepo;
         this.clientRepo = clientRepo;
         this.commandeClientRepo = commandeClientRepo;
         this.ligneCommandeClientRepo = ligneCommandeClientRepo;
+        this.mvtStockService = mvtStockService;
     }
 
     @Override
@@ -81,12 +82,26 @@ public class CommandeClientServiceImpl  implements ICommandeClientService {
         CommandeClient commandeClient = findCommandeClientById(id).get();
         if(commandeClient!=null&& commandeClient.isCommandeLivree()==false){
             commandeClient.setEtatCommande(etatCommande);
-            commandeClientRepo.save(commandeClient);
+            CommandeClient savedCommande = commandeClientRepo.save(commandeClient);
+            if(savedCommande.isCommandeLivree()){
+                updateMvtStock(id);
+            }
         }else {
             log.warn("On ne peut pas modifier l'etat de la commande");
         }
         return commandeClient;
     }
-
+    private void updateMvtStock(long idCommande){
+        List<LigneCommandeClient> ligneCommandeClients = ligneCommandeClientRepo.findAllByCommandeClientId(idCommande);
+        ligneCommandeClients.forEach(lig->{
+            MvtStock mvtStock = MvtStock.builder()
+                    .article(lig.getArticle())
+                    .dateMvt(Instant.now())
+                    .typeMvtStock(TypeMvtStock.SORTIE)
+                    .quantite(lig.getQuantite())
+                    .build();
+            mvtStockService.sortieStock(mvtStock);
+        });
+    }
 
 }
